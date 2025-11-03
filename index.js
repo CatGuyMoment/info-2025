@@ -69,7 +69,6 @@ app.get('/search',(req,res) => {
 })
 
 app.get('/pages/:pageName',(req,res) => {
-    path.existsSync
     const page = `pages/${req.params.pageName}/index.html`;
     if (fs.existsSync(page)) {
          res.sendFile(path.join(__dirname,page )); 
