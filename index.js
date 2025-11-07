@@ -77,6 +77,10 @@ app.get('/pages/:pageName',(req,res) => {
     }
 })
 
+app.get('/css',(req,res) =>{
+    res.sendFile(path.join(__dirname,'index.css'));
+})
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
