@@ -24,6 +24,7 @@ function formatToTableCompatibleFormat(jsonResponse) {
 
 var lastInputTimestamp = performance.now();
 
+// button.onclick = () => {
 textbox.oninput = () => {
     console.log('wdawd')
     lastInputTimestamp = performance.now();
