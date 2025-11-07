@@ -68,6 +68,16 @@ app.get('/search',(req,res) => {
     );
 })
 
+
+
+
+
+app.get('/globalcss',(req,res) =>{
+    res.sendFile(path.join(__dirname,'index.css'));
+})
+
+
+
 app.get('/pages/:pageName',(req,res) => {
     const page = `pages/${req.params.pageName}/index.html`;
     if (fs.existsSync(page)) {
@@ -77,9 +87,27 @@ app.get('/pages/:pageName',(req,res) => {
     }
 })
 
-app.get('/css',(req,res) =>{
-    res.sendFile(path.join(__dirname,'index.css'));
+app.get('/js/:pageName',(req,res) => {
+    const page = `pages/${req.params.pageName}/index.js`;
+    if (fs.existsSync(page)) {
+         res.sendFile(path.join(__dirname,page )); 
+    } else {
+         res.sendStatus(404);
+    }
 })
+
+app.get('/css/:pageName',(req,res) => {
+    const page = `pages/${req.params.pageName}/index.css`;
+    if (fs.existsSync(page)) {
+         res.sendFile(path.join(__dirname,page )); 
+    } else {
+         res.sendStatus(404);
+    }
+})
+
+
+
+
 
 
 const PORT = process.env.PORT || 3000;
