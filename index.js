@@ -2,9 +2,29 @@ const express = require('express');
 
 const app = express();
 const fs = require('fs');
+const { type } = require('os');
 const path = require('path');
 
+const sqlite3 = require('sqlite3');
+
 const pagesPath = path.join(__dirname, 'pages');
+
+
+const mainDB = new sqlite3.Database('main.db',sqlite3.OPEN_READWRITE,(err) => {
+    if (err) {
+        console.log('database init failed', err)
+        return
+    }
+})
+
+mainDB.exec(`
+    create table if not exists feedback (
+        email text,
+        feedback text
+)
+    
+`)
+
 
 //input:  search unigrams (array of strings)
 //output: array of href urls, along with their occurrences
@@ -23,6 +43,9 @@ function search_pages(query,max_results) {
 
 
             for (const wordToTestAgainst of query) {
+                if (wordToTestAgainst === '') {
+                    continue
+                }
                 let wordAmount = 0
                 content.split(',').forEach((wordInPage) => {
                     if (wordInPage === wordToTestAgainst) {
@@ -68,7 +91,26 @@ app.get('/search',(req,res) => {
     );
 })
 
+app.get('/store-feedback',(req,res) => {
+    const queries = req.query;
+    
+    const feedback = queries.feedback 
+    const email = queries.email
 
+    if (!!email && !!feedback && typeof(email) ==='string' && typeof(feedback) === 'string') {
+        mainDB.prepare(`
+                insert into feedback (email, feedback) values (?, ?)
+                `)
+                .run(email,feedback)
+                .finalize();
+
+        res.redirect('/pages/feedback?success=1')
+    } else {
+        res.redirect('/pages/feedback?success=0')
+    }
+
+    
+})
 
 
 
