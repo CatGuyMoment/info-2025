@@ -91,6 +91,7 @@ app.get('/search',(req,res) => {
     );
 })
 
+// i really dont like doing this because csrf attack
 app.get('/store-feedback',(req,res) => {
     const queries = req.query;
     

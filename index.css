@@ -3,4 +3,112 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+   text-align: center;
+  background-color: rgb(193, 193, 193)
 } 
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+@keyframes movearound {
+    from {
+        transform: rotate(0deg) translateX(5vh) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(5vh) rotate(-360deg);
+    }
+}
+
+
+
+.wh-bubble {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    top: var(--y);
+    left: var(--x);
+
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--color1), var(--color2) 70%);
+    filter: blur(0.5vmin);
+
+
+    animation: movearound var(--d) linear infinite;
+    animation-delay: var(--delay);
+    transform-origin: center center;
+}
+
+
+.centered {
+position: absolute;
+    top:50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  transition: all 0.3s ease;
+}
+.lowered {
+  position: absolute;
+  top:50%;
+  left: 0%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+
+
+.annoying-corner-workaround {
+  border-radius: 3rem;
+  overflow: hidden;            
+  margin: 20px auto;
+  padding: 0 2rem;
+  width: 80%;
+  align-self: center;
+  background-color: #ffffff;
+
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse; 
+  font-family: Arial, sans-serif;
+
+}
+table:empty, td:empty, tr:empty {
+  display: none;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  margin: calc(15px + 10rem);
+  text-align: left;
+}
+
+th {
+  background-color: #ffffff;
+  color: black;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+
+th:first-child, td:first-child {
+  border-left: none;
+}
+
+th:last-child, td:last-child {
+  border-right: none;
+}
+
+tr:first-child th, tr:first-child td {
+  border-top: none;
+}
+
+tr:last-child th, tr:last-child td {
+  border-bottom: none;
+}

@@ -1,5 +1,6 @@
 
 
+
 console.log('helloo!')
 
 const button = document.getElementById('searchbutton');
@@ -26,8 +27,8 @@ var lastInputTimestamp = performance.now();
 
 // button.onclick = () => {
 textbox.oninput = () => {
-    console.log('wdawd')
     lastInputTimestamp = performance.now();
+    results.innerHTML = ''
     setTimeout(() => {
         
         if (performance.now() -  lastInputTimestamp < 400) {
@@ -44,7 +45,8 @@ textbox.oninput = () => {
             {
                 'q' : query
             }
-        ).toString()
+        )
+        .toString()
 
         fetch('/search?' + urlParams).then(
                 async (response) => {
@@ -52,8 +54,9 @@ textbox.oninput = () => {
                         return
                     }
 
-                    const jsonResponse = await response.json()
-                    console.log(jsonResponse,formatToTableCompatibleFormat(jsonResponse))
+                    let jsonResponse = await response.json()
+                    // jsonResponse =  Array.from({ length: 10 }).flatMap(() => jsonResponse) //debugger
+
                     results.innerHTML = formatToTableCompatibleFormat(jsonResponse)
                 }
             )
