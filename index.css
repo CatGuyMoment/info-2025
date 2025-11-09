@@ -1,24 +1,41 @@
-/* default colors */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+/* ------------------- */
+
+
 :root {
-  --c1 : #FFC3FF;
-  --c2 : #FFB3FF;
-  --c3 : #FFA3FF;
-  --c4 : #FF95FF;
-  --c5 : #FC87EB;
-  --c6 : #E17AD2;
-  --c7 : #C86EBB;
-  --c8 : #B263A6;
-  --c9 : #9C5993;
-  --c10 : #894F81;
-  --c11 : #784670;
-  --c12 : #673E61;
-  --c13 : #593654;
-  --c14 : #4C2F48;
-  --c15 : #40293D;
-  --c16 : #352333;
+  --c1 : #D694FF;
+  --c2 : #BF84FF;
+  --c3 : #AA75FF;
+  --c4 : #9667FF;
+  --c5 : #845AFB;
+  --c6 : #734EDD;
+  --c7 : #6443C1;
+  --c8 : #563AA7;
+  --c9 : #4A3190;
+  --c10 : #3E297B;
+  --c11 : #342268;
+  --c12 : #2C1C58;
+  --c13 : #241749;
+  --c14 : #1D123C;
+  --c15 : #170E30;
+  --c16 : #120B26;
 
 }
 
+body {
+  font-family: "Futura", "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+   text-align: center;
+  background: var(--c2);
+  color : var(--c10);
+}
+
+
+/* ------------------- */
 
 @keyframes movearound {
     from {
@@ -32,11 +49,7 @@
 
 
 
-
-
-
-
-
+/* ------------------- */
 
 .wh-bubble {
     position: absolute;
@@ -57,8 +70,8 @@
 
 
 .centered {
-position: absolute;
-    top:50%;
+  position: absolute;
+  top:50%;
   left: 50%;
   transform: translate(-50% , -50%);
   transition: all 0.3s ease;
@@ -71,90 +84,115 @@ position: absolute;
   transition: all 0.3s ease;
 }
 
+.main-article {
+  position: absolute;
+  top:5rem;
+  background: var(--c1);
+  display: block;   
+  gap: 0 4rem;
+  width: calc(100% - 8rem);
+  left: 2rem;
+  padding: 2rem;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 5px var(--c1);
+}
+.main-article p,
+.main-article ul,
+.main-article li {
+  text-align: left;
+}
+
+.tip {
+  background-color: var(--c2);
+  padding: 1rem;
+}
 
 .topbar {
   position: absolute;
-
   width: 100%;
   left: 0%;
   top: 0%;
+  background-color: var(--c2);
+  height: 3rem;
 }
 
 
 
 
+/* ------------------- */
 
 
 
 
-body {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-   text-align: center;
-  background: var(--c2);
-  color : var(--c14);
-}
-input {
-    font-family: inherit;
-    font-size: inherit;
-    background-color: var(--c1);
-    border: 1px solid var(--c10);
-}
 
-input:focus {
-  outline: none;
-}
+
 a {
   color: var(--c8);
 }
 
 
 
-
-
-
-nav {
-  padding: 10px;
+hr {
+  border-color: var(--c10);
 }
+
+
+
+button {
+  color: var(--c10);
+}
+
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--c1);
+    border: 1px solid var(--c10);
+
+}
+
+input:focus {
+  outline: none;
+}
+
+
+b {
+  font-weight: 600;
+
+}
+
+
+
+
 nav ul {
   list-style: none;   
   padding: 0;        
   display: flex;   
-  gap: 4rem;
+  gap: 0 4rem;
   justify-content: center;
-
 }
-
-
-
-
-
-
-
-
-
 
 
 
 
 .annoying-corner-workaround {
-  border-radius: 3rem;
+  border-radius: 1rem;
   overflow: hidden;            
   margin: 20px auto;
-  padding: 0 2rem;
   width: 80%;
   align-self: center;
-  background-color: var(--c10);
+  background-color: var(--c11);
 
 }
 
 
 table {
   width: 100%;
-  border-collapse: collapse; 
+  /* border-collapse: collapse;  */
   font-family: Arial, sans-serif;
+  text-align: center;
+  border: none;
 
 }
 table:empty, td:empty, tr:empty {
@@ -162,10 +200,8 @@ table:empty, td:empty, tr:empty {
 }
 
 th, td {
-  border: 1px solid var(--c2);
   padding: 10px 15px;
-  margin: calc(15px + 10rem);
-  text-align: left;
+
 }
 
 th {
@@ -181,20 +217,4 @@ tr a {
   color: var(--c4)
 }
 
-
-th:first-child, td:first-child {
-  border-left: none;
-}
-
-th:last-child, td:last-child {
-  border-right: none;
-}
-
-tr:first-child th, tr:first-child td {
-  border-top: none;
-}
-
-tr:last-child th, tr:last-child td {
-  border-bottom: none;
-}
 

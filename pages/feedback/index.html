@@ -1,52 +1,49 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/globalcss">
-    <link rel="stylesheet" href="/css/feedback">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/globalcss">
+        <link rel="stylesheet" href="/css/feedback">
+    </head>
+    <body>
 
-</head>
-<body>
-
-       <div class="wh-bubble" style="--size:30vmin; --x:50%; --y:10%; --d:100s; --delay:-20s; --color1:var(--c1); --color2:var(--c10)"></div>
-    <div class="wh-bubble" style="--size:5vmin; --x:10%; --y:40%; --d:100s; --delay:0s;  --color1:var(--c4); --color2:var(--c6)"></div>
-    <div class="wh-bubble" style="--size:40vmin; --x:50%; --y:50%; --d:100s; --delay:-30s;  --color1:var(--c1); --color2:var(--c5)"></div>
-
+        <div class="wh-bubble" style="--size:30vmin; --x:50%; --y:5%; --d:100s; --delay:-20s; --color1:var(--c1); --color2:var(--c10)"></div>
+        <div class="wh-bubble" style="--size:5vmin; --x:10%; --y:40%; --d:100s; --delay:0s;  --color1:var(--c4); --color2:var(--c6)"></div>
+        <div class="wh-bubble" style="--size:40vmin; --x:50%; --y:50%; --d:100s; --delay:-30s;  --color1:var(--c1); --color2:var(--c5)"></div>
 
 
-    <!-- menu is deprecated -->
-    <div class="topbar">
-        <nav>
-        <ul>
-            <li><a href="/pages/home">Search</a></li>
-            <li><a href="/pages/feedback">Send Feedback</a></li>
-        </ul>
-    </nav>
-    </div>
 
 
-    <div id="infobar" style="display: none;background-color: white;">
-    </div>
 
-    <div class="centered">
-         <h1>
-        Send Feedback
-        </h1>
-        <form action="/store-feedback" method="get">
-            <div>
-                <label for="feedbacktext">Feedback: </label>
-                <input name="feedback" type="text">
-            </div>
+        <div class="centered">
+            <h1>
+                Send Feedback
+            </h1>
+            <form action="/store-feedback" method="get">
+                <div>
+                    <label for="feedbacktext">Feedback: </label>
+                    <input name="feedback" type="text">
+                </div>
 
-            <div>
-                <label for="email">Email: </label>
-                <input name="email" type="email">
-            </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input name="email" type="email">
+                </div>
 
-            <input name="submit" type="submit" value="Submit Feedback">
-        </form>
+                <input name="submit" type="submit" value="Submit Feedback">
+            </form>
 
-    </div>
-       
-    <script src="/js/feedback"></script>
-</body>
+        </div>
+        <!-- menu is deprecated -->
+        <div class="topbar">
+            <nav>
+                <ul>
+                    <li><a href="/pages/home">Search</a></li>
+                    <li><a href="/pages/feedback">Send Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="infobar" style="display: none;background-color: white;"></div>
+        <script src="/js/feedback"></script>
+    </body>
+</html>

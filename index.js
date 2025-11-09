@@ -2,7 +2,6 @@ const express = require('express');
 
 const app = express();
 const fs = require('fs');
-const { type } = require('os');
 const path = require('path');
 
 const sqlite3 = require('sqlite3');
@@ -33,6 +32,9 @@ function search_pages(query,max_results) {
 
         
     files.forEach(function (fileName) {
+            if (fileName === '.DS_Store') {
+                return; //this would normally be run on linux, where this isnt an issue
+            }
             const relativeExpressPath = path.join('/pages',fileName);
             const absolutePath = path.join(pagesPath,fileName,'keywords.txt');
             const content = fs.readFileSync(absolutePath).toString();
@@ -47,7 +49,7 @@ function search_pages(query,max_results) {
                 let wordAmount = 0
                 content.split(',').forEach((wordInPage) => {
                     if (wordInPage === wordToTestAgainst) {
-                        wordAmount += 1
+                        wordAmount += 1;
                     }
                 });
                 
@@ -62,15 +64,14 @@ function search_pages(query,max_results) {
     return urls.sort((a,b) => {
         b[1] - a[1]
     })
-    .slice(0,max_results)
+    .slice(0,max_results);
 }
 
 
 
 
 app.get('/', (req, res) => {
-
-   res.redirect('/pages/home')
+   res.redirect('/pages/home');
 });
 
 app.get('/search',(req,res) => {
@@ -103,9 +104,9 @@ app.get('/store-feedback',(req,res) => {
                 .run(email,feedback)
                 .finalize();
 
-        res.redirect('/pages/feedback?success=1')
+        res.redirect('/pages/feedback?success=1');
     } else {
-        res.redirect('/pages/feedback?success=0')
+        res.redirect('/pages/feedback?success=0');
     }
 
     
@@ -153,5 +154,5 @@ app.get('/css/:pageName',(req,res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });

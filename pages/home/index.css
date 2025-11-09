@@ -2,15 +2,13 @@
 
 body {
     text-align: center;
-
 }
 
 
 
 
 .centered:has(input:not(:placeholder-shown)) {
-    transform: translate(-50% , -100%)
-    
+    transform: translate(-50% , -100%);
 }
 
 
@@ -23,7 +21,6 @@ body {
     animation: shift-text 10s ease-in-out infinite alternate;
     font-weight: 800;
     margin: 1rem;
-    /* 0px 0px 30px rgba(183, 0, 255, 0.8); */
 }
 
 #outer-searchbox {
@@ -54,12 +51,15 @@ body {
     padding: 0;
     width: 100%;
     color: var(--c2);
+}
 
+#searchbox:focus {
+     color: var(--c1);
 }
 
 #searchbox::placeholder {
     color: var(--c1);
 }
 .annoying-corner-workaround  {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px var(--c2);
 }

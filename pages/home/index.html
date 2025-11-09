@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/globalcss">
-    <link rel="stylesheet" href="/css/home">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- <div class="bl-bubble" style="--size:50vmin; --x:40%; --y:40%; --d:100s; --delay:-5s"></div> -->
-    <div class="wh-bubble" style="--size:30vmin; --x:50%; --y:10%; --d:100s; --delay:-20s; --color1:var(--c1); --color2:var(--c10)"></div>
-    <div class="wh-bubble" style="--size:5vmin; --x:10%; --y:40%; --d:100s; --delay:0s;  --color1:var(--c4); --color2:var(--c6)"></div>
-    <div class="wh-bubble" style="--size:40vmin; --x:50%; --y:50%; --d:100s; --delay:-30s;  --color1:var(--c1); --color2:var(--c5)"></div>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/globalcss">
+        <link rel="stylesheet" href="/css/home">
+    </head>
+    <body>
+        <div class="wh-bubble" style="--size:30vmin; --x:50%; --y:5%; --d:100s; --delay:-20s; --color1:var(--c1); --color2:var(--c10)"></div>
+        <div class="wh-bubble" style="--size:5vmin; --x:10%; --y:40%; --d:100s; --delay:0s;  --color1:var(--c4); --color2:var(--c6)"></div>
+        <div class="wh-bubble" style="--size:40vmin; --x:50%; --y:50%; --d:100s; --delay:-30s;  --color1:var(--c1); --color2:var(--c5)"></div>
 
-    <div class="topbar">
-        <nav>
-        <ul>
-            <li><a href="/pages/home">Search</a></li>
-            <li><a href="/pages/feedback">Send Feedback</a></li>
-        </ul>
-    </nav>
-    </div>
 
-   <div class="centered">
-        <div>
-            <h1 id="searchtitle">
-                Home
-            </h1>
-            <div id="outer-searchbox">
-                <input id="searchbox" type="text" value="" placeholder="Search">
-            </div>
-            
-            <!-- <button id="searchbutton">Search</button> -->
-            
-                
-        </div>
-        
-    </div> 
+    <div class="centered">
+            <div>
+                <h1 id="searchtitle">
+                    Home
+                </h1>
+                <div id="outer-searchbox">
+                    <input id="searchbox" type="text" value="" placeholder="Search">
+                </div>  
+            </div>  
+        </div> 
 
-    <div class="lowered">
-        <div class="annoying-corner-workaround">
+        <div class="lowered">
+            <div class="annoying-corner-workaround">
                 <table>
                     <thead>
 
@@ -46,8 +32,17 @@
 
                     </tbody>
                 </table>
-    </div>
-    </div>
-   
-     <script src="/js/home"></script>
-</body>
+            </div>
+        </div>
+        <div class="topbar">
+            <nav>
+                <ul>
+                    <li><a href="/pages/home">Search</a></li>
+                    <li><a href="/pages/feedback">Send Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+        <script src="/js/home"></script>
+    </body>
+
+</html>

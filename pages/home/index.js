@@ -1,8 +1,4 @@
 
-
-
-console.log('helloo!')
-
 const button = document.getElementById('searchbutton');
 const textbox = document.getElementById('searchbox');
 const results = document.getElementById('searchresults');
@@ -19,16 +15,15 @@ function formatToTableCompatibleFormat(jsonResponse) {
                     </th> 
                 </tr>`
             })
-        .join('')
+        .join('');
 }
 
 
 var lastInputTimestamp = performance.now();
 
-// button.onclick = () => {
 textbox.oninput = () => {
     lastInputTimestamp = performance.now();
-    results.innerHTML = ''
+    results.innerHTML = '';
     setTimeout(() => {
         
         if (performance.now() -  lastInputTimestamp < 400) {
@@ -39,7 +34,8 @@ textbox.oninput = () => {
         
         const query = textbox.value;
         if (query == '') {
-            results.innerHTML = ''
+            results.innerHTML = '';
+            return;
         }
         const urlParams = new URLSearchParams(
             {
@@ -54,11 +50,9 @@ textbox.oninput = () => {
                         return
                     }
 
-                    let jsonResponse = await response.json()
-                    // jsonResponse =  Array.from({ length: 10 }).flatMap(() => jsonResponse) //debugger
-
-                    results.innerHTML = formatToTableCompatibleFormat(jsonResponse)
+                    const jsonResponse = await response.json();
+                    results.innerHTML = formatToTableCompatibleFormat(jsonResponse);
                 }
             )
-        },500)
+        },500);
 }
