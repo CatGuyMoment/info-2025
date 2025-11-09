@@ -1,16 +1,31 @@
-body {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-   text-align: center;
-  background-color: rgb(193, 193, 193)
-} 
+/* #FFCBC6
+#FFA19C
+#FF7D79
+#FF5E5C
+#D44544
+#9A3130 */
 
-input {
-    font-family: inherit;
-    font-size: inherit;
+/* default colors */
+:root {
+  --c1 : #FFC3FF;
+  --c2 : #FFB3FF;
+  --c3 : #FFA3FF;
+  --c4 : #FF95FF;
+  --c5 : #FC87EB;
+  --c6 : #E17AD2;
+  --c7 : #C86EBB;
+  --c8 : #B263A6;
+  --c9 : #9C5993;
+  --c10 : #894F81;
+  --c11 : #784670;
+  --c12 : #673E61;
+  --c13 : #593654;
+  --c14 : #4C2F48;
+  --c15 : #40293D;
+  --c16 : #352333;
+
 }
+
 
 @keyframes movearound {
     from {
@@ -20,6 +35,13 @@ input {
         transform: rotate(360deg) translateX(5vh) rotate(-360deg);
     }
 }
+
+
+
+
+
+
+
 
 
 
@@ -39,6 +61,14 @@ input {
     animation-delay: var(--delay);
     transform-origin: center center;
 }
+
+
+
+
+
+
+
+
 
 
 .centered {
@@ -65,6 +95,41 @@ position: absolute;
   top: 0%;
 }
 
+
+
+
+
+
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+   text-align: center;
+  background: var(--c2);
+  color : var(--c14);
+}
+input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--c1);
+    border: 1px solid var(--c10);
+}
+
+input:focus {
+  outline: none;
+}
+a {
+  color: var(--c8);
+}
+
+
+
+
+
+
 nav {
   padding: 10px;
 }
@@ -87,6 +152,8 @@ nav ul {
 
 
 
+
+
 .annoying-corner-workaround {
   border-radius: 3rem;
   overflow: hidden;            
@@ -94,7 +161,7 @@ nav ul {
   padding: 0 2rem;
   width: 80%;
   align-self: center;
-  background-color: #ffffff;
+  background-color: var(--c10);
 
 }
 
@@ -110,19 +177,23 @@ table:empty, td:empty, tr:empty {
 }
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid var(--c2);
   padding: 10px 15px;
   margin: calc(15px + 10rem);
   text-align: left;
 }
 
 th {
-  background-color: #ffffff;
-  color: black;
+  background-color: var(--c10);
+  color: var(--c2);
 }
 
 td {
-  background-color: #f9f9f9;
+  background-color: var(--c10);
+}
+
+tr a {
+  color: var(--c4)
 }
 
 
@@ -141,3 +212,4 @@ tr:first-child th, tr:first-child td {
 tr:last-child th, tr:last-child td {
   border-bottom: none;
 }
+

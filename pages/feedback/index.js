@@ -13,5 +13,5 @@ if (success === '0') {
 } 
 
 setTimeout(() => {
-    infobar.style.display = 'none'
+    infobar.classList.add('disabled')
 }, 2000);

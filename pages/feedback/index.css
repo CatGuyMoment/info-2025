@@ -1,5 +1,27 @@
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    top: -50%;
+  }
+  100% {
+    opacity: 1;
+   top: 0%;
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    opacity: 1;
+    top: 0%;
+  }
+  100% {
+    opacity: 0;
+    top: -50%;
+  }
+}
+
 .centered {
-    background-color: white;
+    background-color: var(--c6);
     padding: 4rem;
     border-radius: 3rem;
 
@@ -15,4 +37,9 @@ form > * {
     color: white;
     text-align: center;
     padding: 1rem;
+    animation: pop-in 0.5s ease-out;
+}
+
+#infobar.disabled {
+  animation: pop-out 0.5s ease-in forwards;
 }

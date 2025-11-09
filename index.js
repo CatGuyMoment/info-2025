@@ -26,8 +26,6 @@ mainDB.exec(`
 `)
 
 
-//input:  search unigrams (array of strings)
-//output: array of href urls, along with their occurrences
 
 function search_pages(query,max_results) {
     const urls = [];
